@@ -11,17 +11,30 @@ class StatsPackage:
     # complete the method implementation to calculate the mean of an unknown list
     def calculate_mean(self, nums):
 
-        ##### Your code here #####
+        global average
+        average = 0
+        total = 0
+        numint = len(nums)
+        for val in nums:
+            total = total+val
+            average = total/numint
 
-        return
+
+        return average
 
     # complete the method implementation to calculate the standard deviation
     # https://mathworld.wolfram.com/StandardDeviation.html
     def calculate_std_dev(self, nums):
 
-        ##### Your code here #####
-
-        return
+        mean = self.calculate_mean(nums)
+        i = 0
+        sum = 0
+        standarddev = 0
+        while i < len(nums):
+            sum += (nums[i] - mean)*(nums[i] - mean)
+            i += 1
+        standarddev = (sum/len(nums))** (1/2)
+        return standarddev
 
 
 if __name__ == "__main__":

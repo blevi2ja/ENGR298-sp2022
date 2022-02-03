@@ -18,8 +18,19 @@ class CalculatorPacket:
 
     #Perform the calculation inputting into the object. If the calculation is invalid, return None
     def perform_calculation(self):
-        # your code here :)
-        return
+        ans = 0
+        if self.operator == Operation.ADD:
+            ans = self.A + self.B
+        elif self.operator == Operation.SUBTRACT:
+            ans = self.A - self.B
+        elif self.operator == Operation.MULTIPLY:
+            ans = self.A * self.B
+        elif self.operator == Operation.DIVIDE:
+            ans = self.A / self.B
+        else:
+            ans = "None"
+
+        return ans
 
 
 
